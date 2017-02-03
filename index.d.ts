@@ -12,7 +12,7 @@ interface Options {
   any: boolean;
   // additional headers
   headers: {
-    [key: String]: string;
+    [key: string]: string;
   };
   maxAge: number;
   credentials: boolean;
@@ -23,6 +23,6 @@ interface Options {
 /**
  * Returns multiple-cors-domain middleware
  */
-function multipleCORSDomain(options: Options);
+declare function multipleCORSDomain(options: Options);
 
 export = multipleCORSDomain;
