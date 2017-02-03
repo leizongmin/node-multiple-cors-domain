@@ -37,7 +37,7 @@ function multipleCORSDomain(options) {
 
   if ('maxAge' in options) {
     assert(options.maxAge > 0, `invalid 'maxAge' option: must be greater than 0`);
-    options.headers['Access-Control-Max-Age'] = options.maxAge;
+    options.headers['Access-Control-Max-Age'] = String(options.maxAge);
   }
   if ('credentials' in options) {
     assert(typeof options.credentials === 'boolean', `invalid 'credentials' option: must be true or false`);
