@@ -17,15 +17,39 @@ const parseURL = require('url').parse;
  *   - {Array} domain   a list of domains
  *   - {Boolean} any    allow any domain
  *   - {Object} headers additional headers
+ *   - {Number} maxAge
+ *   - {Boolean} credentials
+ *   - {Array} allowHeaders
+ *   - {Array} allowMethods
  */
 function multipleCORSDomain(options) {
 
   assert(options, `missing options`);
+  options = Object.assign({}, options);
+  options.headers = Object.assign({}, options.headers || {});
+
   if (options.any) {
     assert(options.any === true, `invalid 'any' option: must be true`);
   } else {
     assert(Array.isArray(options.domain), `invalid 'domain' option: must be an array`);
     assert(options.domain.length > 0, `invalid 'domain' option: must have at least one item`);
+  }
+
+  if ('maxAge' in options) {
+    assert(options.maxAge > 0, `invalid 'maxAge' option: must be greater than 0`);
+    options.headers['Access-Control-Max-Age'] = options.maxAge;
+  }
+  if ('credentials' in options) {
+    assert(typeof options.credentials === 'boolean', `invalid 'credentials' option: must be true or false`);
+    options.headers['Access-Control-Allow-Credentials'] = String(options.credentials);
+  }
+  if ('allowHeaders' in options) {
+    assert(Array.isArray(options.allowHeaders), `invalid 'allowHeaders' option: must be an array`);
+    options.headers['Access-Control-Allow-Headers'] = options.allowHeaders.join(', ');
+  }
+  if ('allowMethods' in options) {
+    assert(Array.isArray(options.allowMethods), `invalid 'allowMethods' option: must be an array`);
+    options.headers['Access-Control-Allow-Methods'] = options.allowMethods.join(', ');
   }
 
   function setAdditionalHeaders(res) {
@@ -40,7 +64,6 @@ function multipleCORSDomain(options) {
     return function (req, res, next) {
       const origin = req.headers.origin;
       if (origin) {
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
         res.setHeader('Access-Control-Allow-Origin', origin);
         setAdditionalHeaders(res);
       }
@@ -52,7 +75,6 @@ function multipleCORSDomain(options) {
     const origin = req.headers.origin;
     const info = parseURL(origin);
     if (origin && options.domain.indexOf(info.host) !== -1) {
-      res.setHeader('Access-Control-Allow-Credentials', 'true');
       res.setHeader('Access-Control-Allow-Origin', origin);
       setAdditionalHeaders(res);
     }

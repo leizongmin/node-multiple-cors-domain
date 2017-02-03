@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Connect middleware that allow multiple CORS domain",
   "main": "index.js",
+  "type": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/leizongmin/node-multiple-cors-domain/issues"
   },
-  "homepage": "https://github.com/leizongmin/node-multiple-cors-domain#readme"
+  "homepage": "https://github.com/leizongmin/node-multiple-cors-domain#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "connect": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  }
 }
