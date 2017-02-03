@@ -1,0 +1,27 @@
+{
+  "name": "multiple-cors-domain",
+  "version": "1.0.0",
+  "description": "Connect middleware that allow multiple CORS domain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leizongmin/node-multiple-cors-domain.git"
+  },
+  "keywords": [
+    "cors",
+    "origin",
+    "domain",
+    "multiple",
+    "connect",
+    "middleware"
+  ],
+  "author": "Zongmin Lei <leizongmin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leizongmin/node-multiple-cors-domain/issues"
+  },
+  "homepage": "https://github.com/leizongmin/node-multiple-cors-domain#readme"
+}
