@@ -27,4 +27,4 @@ interface Options {
  */
 declare function multipleCORSDomain(options: Options): express.RequestHandler;
 
-export default multipleCORSDomain;
+export = multipleCORSDomain;
