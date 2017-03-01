@@ -7,17 +7,17 @@
 
 interface Options {
   // a list of domains
-  domain: string[];
+  domain?: string[];
   // allow any domain
-  any: boolean;
+  any?: boolean;
   // additional headers
-  headers: {
+  headers?: {
     [key: string]: string;
   };
-  maxAge: number;
-  credentials: boolean;
-  allowHeaders: string[];
-  allowMethods: string[];
+  maxAge?: number;
+  credentials?: boolean;
+  allowHeaders?: string[];
+  allowMethods?: string[];
 }
 
 /**
@@ -25,4 +25,4 @@ interface Options {
  */
 declare function multipleCORSDomain(options: Options);
 
-export = multipleCORSDomain;
+export default multipleCORSDomain;
