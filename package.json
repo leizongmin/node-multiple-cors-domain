@@ -1,6 +1,6 @@
 {
   "name": "multiple-cors-domain",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Connect middleware that allow multiple CORS domain",
   "main": "index.js",
   "type": "index.d.ts",
@@ -30,5 +30,8 @@
     "connect": "^3.5.0",
     "mocha": "^3.2.0",
     "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.35"
   }
 }

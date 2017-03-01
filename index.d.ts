@@ -5,6 +5,8 @@
  * @author Zongmin Lei <leizongmin@gmail.com>
  */
 
+import * as express from 'express';
+
 interface Options {
   // a list of domains
   domain?: string[];
@@ -23,6 +25,6 @@ interface Options {
 /**
  * Returns multiple-cors-domain middleware
  */
-declare function multipleCORSDomain(options: Options);
+declare function multipleCORSDomain(options: Options): express.RequestHandler;
 
 export default multipleCORSDomain;
