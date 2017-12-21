@@ -22,6 +22,8 @@
 
 
 # multiple-cors-domain
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/leizongmin/node-multiple-cors-domain.svg)](https://greenkeeper.io/)
 Connect middleware that allow multiple CORS domain
 
 ## Installation
