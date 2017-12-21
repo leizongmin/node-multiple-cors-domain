@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/leizongmin/node-multiple-cors-domain#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "connect": "^3.5.0",
-    "mocha": "^3.2.0",
+    "mocha": "^4.0.1",
     "supertest": "^3.0.0"
   },
   "dependencies": {
